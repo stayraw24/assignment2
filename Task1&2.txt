@@ -1,0 +1,48 @@
+Installation:-
+
+npm install --save jimp
+
+Resizing:-
+
+resize() method is used to alter the height and width of the image.
+Syntax: resize(w,h [,mode])
+w-width
+h-height
+mode-mode
+Jimp.AUTO mode will resize accordingly while maintaining the aspect ratio.
+
+Code:-
+
+import jimp from 'jimp';
+const Jimp =require('jimp')
+async function resize(){
+	const image =await Jimp.read('source/url');
+	await image resize(500,500,Jimp.AUTO);
+	await image.writeAsync('xyz/new.jpg');
+	}
+resize();
+
+
+
+
+
+
+
+SQL TASK
+
+a)SELECT r.name, r.desc 
+FROM Restaurant AS r
+INNER JOIN 
+( SELECT f.id, f.categories,f.is_pure_veg 
+FROM Franchise AS f
+INNER JOIN
+TableDetails AS d 
+ON f.id == d.FranchiseId ) AS i
+ON Restaurant.id == Franchise .RestaurantID
+WHERE TableDetails.QRCode == "input"
+
+b)SELECT * FROM Item 
+INNER JOIN
+SELECT * FROM Franchise
+ON Item.RestaurantID == Franchise.RestaurantID
+
